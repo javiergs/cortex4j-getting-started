@@ -114,5 +114,3 @@ Each program connects using `CortexClient`, registers a `CortexListener`, subscr
 - Access denied: check Client ID/Secret, Launcher sign-in, and application approval.
 - Stream rejected: check permissions, headset compatibility, and subscription entitlement.
 - Connection failed: confirm Launcher is running.\n- Java compilation error: check that `mvn -version` reports Java 21, not Java 17.\n- Dependency resolution error: confirm internet access and that Maven can download `com.javiergs:cortex4j:0.2.0` from Maven Central.
-
-See the [public Cortex4J Javadoc](https://javiergs.github.io/cortex4j-getting-started/javadoc/) for API details.
