@@ -27,14 +27,21 @@ Then return to this repository's root directory.
 
 ## Credentials
 
-Set environment variables:
+For these Getting Started examples, store your Cortex application credentials in a local properties file.
 
-```bash
-export CORTEX_CLIENT_ID="your-client-id"
-export CORTEX_CLIENT_SECRET="your-client-secret"
+1. Copy `src/main/resources/cortex4j.properties.example` to `src/main/resources/cortex4j.properties`.
+2. Edit `cortex4j.properties` with the Client ID and Client Secret from your registered EMOTIV application:
+
+```properties
+cortex.client.id=YOUR_CLIENT_ID
+cortex.client.secret=YOUR_CLIENT_SECRET
 ```
 
-Alternatively copy `src/main/resources/cortex4j.properties.example` to `src/main/resources/cortex4j.properties` and enter your credentials. The actual properties file is ignored by Git. Environment variables take precedence. **Never commit credentials or distribute them in a JAR.**
+3. Save the file and run an example. `CortexSession.connect()` automatically reads these credentials; no changes to the Java examples are necessary.
+
+The real `cortex4j.properties` is excluded by `.gitignore`. **Never commit credentials or distribute a JAR containing them.**
+
+**Optional:** Instead of a properties file, you can set `CORTEX_CLIENT_ID` and `CORTEX_CLIENT_SECRET` environment variables. If both are set, they take precedence over the properties file.
 
 ## Examples
 
