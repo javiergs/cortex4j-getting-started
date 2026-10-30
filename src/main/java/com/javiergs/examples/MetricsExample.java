@@ -12,12 +12,17 @@ public final class MetricsExample {
         }
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         try (CortexSession session = CortexSession.connect()) {
             session.addListener("met", new MetricsListener());
             session.subscribe("met");
             System.out.println("Listening for performance metrics for 30 seconds...");
             Thread.sleep(30_000);
+        } catch (InterruptedException error) {
+            Thread.currentThread().interrupt();
+            System.err.println("Listening interrupted.");
+        } catch (IllegalStateException error) {
+            CortexErrorReporter.report(error);
         }
     }
 }
