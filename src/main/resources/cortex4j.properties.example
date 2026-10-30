@@ -1,0 +1,5 @@
+# Copy this file to cortex4j.properties in the same directory.
+# Use your Cortex application credentials, not your EMOTIV account password.
+# Never commit the completed cortex4j.properties file.
+cortex.client.id=YOUR_CLIENT_ID
+cortex.client.secret=YOUR_CLIENT_SECRET
