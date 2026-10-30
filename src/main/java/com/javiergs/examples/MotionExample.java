@@ -11,11 +11,11 @@ public final class MotionExample {
     private MotionExample() { }
 
     public static void main(String[] args) throws InterruptedException {
-        try (CortexClient session = CortexClient.connect()) {
-            System.out.println("Headset: " + session.getHeadsetId());
-            System.out.println("Reported sensors: " + session.getSensorLabels());
-            session.addListener("mot", MotionExample::printSample);
-            session.subscribe("mot");
+        try (CortexClient cortex = CortexClient.connect()) {
+            System.out.println("Headset: " + cortex.getHeadsetId());
+            System.out.println("Reported sensors: " + cortex.getSensorLabels());
+            cortex.addListener("mot", MotionExample::printSample);
+            cortex.subscribe("mot");
             System.out.println("Listening for motion data for 30 seconds...");
             Thread.sleep(30_000);
         } catch (IllegalStateException error) {
