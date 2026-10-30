@@ -1,5 +1,7 @@
 # Getting Started with CORTEX4J
 
+[Contributing](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md) · [Accessibility](ACCESSIBILITY.md)
+
 ![Java 21+](https://img.shields.io/badge/Java-21%2B-blue)
 ![Examples 8.0.0](https://img.shields.io/badge/version-0.2.0-green)
 [![Java CI](https://github.com/jgs-lab/api-cortex4j/actions/workflows/build.yml/badge.svg)](https://github.com/jgs-lab/api-cortex4j/actions/workflows/build.yml)
