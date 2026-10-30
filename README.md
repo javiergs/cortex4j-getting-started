@@ -14,7 +14,17 @@ Independent Java 21/Maven examples for [Cortex4J](https://github.com/jgs-lab/api
 
 ## Install Cortex4J
 
-Cortex4J 0.1.0 is available on Maven Central. The `pom.xml` already declares `com.javiergs:cortex4j:0.1.0`, so Maven downloads the library automatically when you build or run an example. You do not need to clone or install the library separately.
+Cortex4J 0.1.0 is available on Maven Central. Add the following dependency to the `<dependencies>` section of your Maven project's `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>com.javiergs</groupId>
+    <artifactId>cortex4j</artifactId>
+    <version>0.1.0</version>
+</dependency>
+```
+
+This Getting Started repository already includes the dependency in its `pom.xml`. Maven downloads Cortex4J automatically when you build or run an example; you do not need to clone or install the library separately.
 
 ## Credentials
 
