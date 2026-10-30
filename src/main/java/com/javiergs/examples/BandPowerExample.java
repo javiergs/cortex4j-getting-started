@@ -11,11 +11,11 @@ public final class BandPowerExample {
     private BandPowerExample() { }
 
     public static void main(String[] args) throws InterruptedException {
-        try (CortexClient session = CortexClient.connect()) {
-            System.out.println("Headset: " + session.getHeadsetId());
-            System.out.println("Reported sensors: " + session.getSensorLabels());
-            session.addListener("pow", BandPowerExample::printSample);
-            session.subscribe("pow");
+        try (CortexClient cortex = CortexClient.connect()) {
+            System.out.println("Headset: " + cortex.getHeadsetId());
+            System.out.println("Reported sensors: " + cortex.getSensorLabels());
+            cortex.addListener("pow", BandPowerExample::printSample);
+            cortex.subscribe("pow");
             System.out.println("Listening for band-power data for 30 seconds...");
             Thread.sleep(30_000);
         } catch (IllegalStateException error) {
