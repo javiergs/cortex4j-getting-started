@@ -1,0 +1,3 @@
+# Copy to cortex4j.properties (ignored by Git), or use environment variables.
+cortex.client.id=YOUR_CLIENT_ID
+cortex.client.secret=YOUR_CLIENT_SECRET
