@@ -60,6 +60,16 @@ Performance metrics (requires stream entitlement):
 mvn compile exec:java -Dexec.mainClass=com.javiergs.examples.MetricsExample
 ```
 
+Additional stream examples (availability depends on headset and EMOTIV license):
+
+```bash
+mvn compile exec:java -Dexec.mainClass=com.javiergs.examples.EegExample
+mvn compile exec:java -Dexec.mainClass=com.javiergs.examples.MotionExample
+mvn compile exec:java -Dexec.mainClass=com.javiergs.examples.BandPowerExample
+```
+
+These examples print raw ordered channel values. Sensor names and band-power channels are headset/stream-dependent; do not assume array indexes represent specific electrodes or frequency bands. The EEG stream may require additional licensing. All three require EMOTIV Launcher and a connected headset or Virtual Brainwear.
+
 Each program connects, registers an Observer listener, subscribes, prints samples for 30 seconds, and closes the session.
 
 ## Troubleshooting
