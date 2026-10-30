@@ -4,6 +4,13 @@ Independent Java 21/Maven examples for [Cortex4J](https://github.com/jgs-lab/api
 
 <img width="1536" height="1024" alt="a" src="https://github.com/user-attachments/assets/f3881025-747b-4e13-8cfa-cd653f633b7b" />
 
+## API documentation
+
+- [Cortex4J Javadoc](docs/javadoc/index.html) — generated public API reference (available after the documentation publication PR is merged).
+- [CortexSession guide](https://github.com/jgs-lab/api-cortex4j/blob/main/docs/session-api.md) — connection, subscription, and Observer API.
+
+Javadoc is generated from the library repository and proposed here through a reviewed pull request. The published documentation contains API HTML, **not the Java implementation source**. To publish the HTML site, configure GitHub Pages for **Deploy from a branch → main → /docs** in this repository's Settings → Pages.
+
 ## Setup
 
 1. Install JDK 21 and Maven 3.9+; clone this repository and open a terminal in its root directory.
