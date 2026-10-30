@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.javiergs.cortex4j"},{"l":"com.javiergs.cortex4j.data"}];updateSearchResults();
