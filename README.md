@@ -26,6 +26,8 @@ Then return to this repository's root directory.
 
 ## Credentials
 
+Your **Client ID and Client Secret identify your registered Cortex application**. They are **not** your EMOTIV account email address and password. Obtain them by following the application registration instructions in Setup step 3.
+
 For these Getting Started examples, store your Cortex application credentials in a local properties file.
 
 1. Copy `src/main/resources/cortex4j.properties.example` to `src/main/resources/cortex4j.properties`.
