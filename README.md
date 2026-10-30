@@ -1,13 +1,12 @@
 # Cortex4J — Getting Started
 
-Independent Java 21/Maven examples for [Cortex4J](https://github.com/jgs-lab/api-cortex4j). This repository contains examples, not the library implementation.
+Independent Java 21/Maven examples for **Cortex4J**, available on Maven Central. This repository contains examples, not the library implementation.
 
 <img width="1536" height="1024" alt="a" src="https://github.com/user-attachments/assets/f3881025-747b-4e13-8cfa-cd653f633b7b" />
 
 ## API documentation
 
 - [Cortex4J Javadoc](docs/javadoc/index.html) — generated public API reference (available after the documentation publication PR is merged).
-- [CortexSession guide](https://github.com/jgs-lab/api-cortex4j/blob/main/docs/session-api.md) — connection, subscription, and Observer API.
 
 Javadoc is generated from the library repository and proposed here through a reviewed pull request. The published documentation contains API HTML, **not the Java implementation source**. To publish the HTML site, configure GitHub Pages for **Deploy from a branch → main → /docs** in this repository's Settings → Pages.
 
@@ -101,4 +100,4 @@ Each program connects, registers an Observer listener, subscribes, prints sample
 - Stream rejected: check permissions, headset compatibility, and subscription entitlement.
 - Connection failed: confirm Launcher is running.
 
-See [CortexSession documentation](https://github.com/jgs-lab/api-cortex4j/blob/main/docs/session-api.md) for API details.
+See the [public Cortex4J Javadoc](docs/javadoc/index.html) for API details once documentation is published.
