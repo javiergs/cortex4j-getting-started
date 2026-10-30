@@ -6,9 +6,9 @@ Independent Java 21/Maven examples for **Cortex4J**, available on Maven Central.
 
 ## API documentation
 
-- [Cortex4J Javadoc](docs/javadoc/index.html) — generated public API reference (available after the documentation publication PR is merged).
+- [Cortex4J Javadoc](https://javiergs.github.io/cortex4j-getting-started/javadoc/) — rendered public API reference.
 
-Javadoc is generated from the library repository and proposed here through a reviewed pull request. The published documentation contains API HTML, **not the Java implementation source**. To publish the HTML site, configure GitHub Pages for **Deploy from a branch → main → /docs** in this repository's Settings → Pages.
+Javadoc is generated from the library repository and proposed here through a reviewed pull request. The published documentation contains API HTML, **not the Java implementation source**. The HTML site is published through GitHub Pages.
 
 ## Setup
 
@@ -20,13 +20,13 @@ Javadoc is generated from the library repository and proposed here through a rev
 
 ## Install Cortex4J
 
-Cortex4J 0.1.0 is available on Maven Central. Add the following dependency to the `<dependencies>` section of your Maven project's `pom.xml`:
+Cortex4J 0.2.0 is available on Maven Central. Add the following dependency to the `<dependencies>` section of your Maven project's `pom.xml`:
 
 ```xml
 <dependency>
     <groupId>com.javiergs</groupId>
     <artifactId>cortex4j</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
 </dependency>
 ```
 
@@ -49,7 +49,7 @@ cortex.client.id=YOUR_CLIENT_ID
 cortex.client.secret=YOUR_CLIENT_SECRET
 ```
 
-3. Save the file and run an example. `CortexSession.connect()` automatically reads these credentials; no changes to the Java examples are necessary.
+3. Save the file and run an example. `CortexClient.connect()` automatically reads these credentials; no changes to the Java examples are necessary.
 
 The real `cortex4j.properties` is excluded by `.gitignore`. **Never commit credentials or distribute a JAR containing them.**
 
@@ -89,7 +89,7 @@ mvn compile exec:java -Dexec.mainClass=com.javiergs.examples.BandPowerExample
 These examples print raw ordered channel values. Sensor names and band-power channels are headset/stream-dependent; do not assume array indexes represent specific electrodes or frequency bands. The EEG stream may require additional licensing. All three require EMOTIV Launcher and a connected headset or Virtual Brainwear.
 
 
-The metrics example uses the documented channel ordering for known layouts; Cortex4J 0.1.0 does not expose the `subscribe` response's `cols` metadata yet. For unknown layouts, the example prints raw values instead of guessing labels. Verify the reported labels against your headset and Cortex version. See [EMOTIV's sample format documentation](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object).
+The metrics example uses the documented channel ordering for known layouts; Cortex4J does not expose the `subscribe` response's `cols` metadata yet. For unknown layouts, the example prints raw values instead of guessing labels. Verify the reported labels against your headset and Cortex version. See [EMOTIV's sample format documentation](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object).
 
 Each program connects, registers an Observer listener, subscribes, prints samples for 30 seconds, and closes the session.
 
@@ -100,4 +100,4 @@ Each program connects, registers an Observer listener, subscribes, prints sample
 - Stream rejected: check permissions, headset compatibility, and subscription entitlement.
 - Connection failed: confirm Launcher is running.
 
-See the [public Cortex4J Javadoc](docs/javadoc/index.html) for API details once documentation is published.
+See the [public Cortex4J Javadoc](https://javiergs.github.io/cortex4j-getting-started/javadoc/) for API details.

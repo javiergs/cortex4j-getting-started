@@ -1,7 +1,7 @@
 package com.javiergs.examples;
 
 import com.javiergs.cortex4j.CortexSample;
-import com.javiergs.cortex4j.CortexSession;
+import com.javiergs.cortex4j.CortexClient;
 
 /**
  * Minimal observer example for the Cortex "mot" stream.
@@ -11,7 +11,7 @@ public final class MotionExample {
     private MotionExample() { }
 
     public static void main(String[] args) throws InterruptedException {
-        try (CortexSession session = CortexSession.connect()) {
+        try (CortexClient session = CortexClient.connect()) {
             System.out.println("Headset: " + session.getHeadsetId());
             System.out.println("Reported sensors: " + session.getSensorLabels());
             session.addListener("mot", MotionExample::printSample);
