@@ -1,0 +1,19 @@
+name: Verify Maven Central dependency
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Compile using an isolated empty Maven cache
+        run: mvn --batch-mode --no-transfer-progress -Dmaven.repo.local="${{ runner.temp }}/cortex4j-clean-m2" clean compile
