@@ -12,11 +12,11 @@ import com.javiergs.cortex4j.CortexClient;
 public final class DeviceExample {
 
   public static void main(String[] args) throws InterruptedException {
-    try (CortexClient session = CortexClient.connect()) {
-      System.out.println("Connected headset: " + session.getHeadsetId());
-      session.addListener("dev", sample ->
+    try (CortexClient cortex = CortexClient.connect()) {
+      System.out.println("Connected headset: " + cortex.getHeadsetId());
+      cortex.addListener("dev", sample ->
           System.out.println("Device @ " + sample.getTimestamp() + ": " + sample.getValues()));
-      session.subscribe("dev");
+      cortex.subscribe("dev");
       System.out.println("Listening for device samples for 30 seconds...");
       Thread.sleep(30_000);
     }

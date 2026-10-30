@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * Shows human-readable performance metrics for documented Cortex layouts.
- * CortexClient 0.1.0 does not yet expose the subscription's "cols" metadata.
+ * Cortex4J 0.2.0 does not yet expose the subscription's "cols" metadata.
  */
 public final class MetricsExample {
     private static final List<String> INSIGHT_EPOC_LABELS = List.of(
@@ -44,9 +44,9 @@ public final class MetricsExample {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        try (CortexClient session = CortexClient.connect()) {
-            session.addListener("met", new MetricsListener());
-            session.subscribe("met");
+        try (CortexClient cortex = CortexClient.connect()) {
+            cortex.addListener("met", new MetricsListener());
+            cortex.subscribe("met");
             System.out.println("Listening for performance metrics for 30 seconds...");
             Thread.sleep(30_000);
         } catch (IllegalStateException error) {
