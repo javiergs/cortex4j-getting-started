@@ -20,13 +20,13 @@ Javadoc is generated from the library repository and proposed here through a rev
 
 ## Install Cortex4J
 
-Cortex4J 0.1.0 is currently available on Maven Central. **The CortexClient examples on this branch require the forthcoming 0.2.0 release; do not merge until it is published.** Add the following dependency to the `<dependencies>` section of your Maven project's `pom.xml`:
+Cortex4J 0.2.0 is available on Maven Central. Add the following dependency to the `<dependencies>` section of your Maven project's `pom.xml`:
 
 ```xml
 <dependency>
     <groupId>com.javiergs</groupId>
     <artifactId>cortex4j</artifactId>
-    <version>0.1.0</version>
+    <version>0.2.0</version>
 </dependency>
 ```
 
