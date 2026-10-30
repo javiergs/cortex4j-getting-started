@@ -6,7 +6,7 @@ Independent Java 21/Maven examples for [Cortex4J](https://github.com/jgs-lab/api
 
 ## Setup
 
-1. Install JDK 21 and Maven.
+1. Install JDK 21 and Maven 3.9+; clone this repository and open a terminal in its root directory.
 2. Create an [EMOTIV account](https://www.emotiv.com/) and install/sign in to EMOTIV Launcher.
 3. [Register a Cortex application](https://www.emotiv.com/knowledge-base/how-to-register-your-app-id-with-cortex-sdk-for-development) to obtain your Client ID and Client Secret.
 4. Connect a headset or configure [Virtual Brainwear](https://emotiv.gitbook.io/emotiv-launcher/devices-setting-up-virtual-brainwear-r/creating-a-virtual-brainwear-device).
@@ -28,11 +28,14 @@ This Getting Started repository already includes the dependency in its `pom.xml`
 
 ## Credentials
 
+**Do not commit your client secret.** Each student should register their own Cortex application, subject to EMOTIV's account and licensing requirements.
+
+
 Your **Client ID and Client Secret identify your registered Cortex application**. They are **not** your EMOTIV account email address and password. Obtain them by following the application registration instructions in Setup step 3.
 
 For these Getting Started examples, store your Cortex application credentials in a local properties file.
 
-1. Copy `src/main/resources/cortex4j.properties.example` to `src/main/resources/cortex4j.properties`.
+1. Copy `src/main/resources/cortex4j.properties.example` to `src/main/resources/cortex4j.properties` (the example template is included in this repository).
 2. Edit `cortex4j.properties` with the Client ID and Client Secret from your registered EMOTIV application:
 
 ```properties
@@ -47,6 +50,15 @@ The real `cortex4j.properties` is excluded by `.gitignore`. **Never commit crede
 **Optional:** Instead of a properties file, you can set `CORTEX_CLIENT_ID` and `CORTEX_CLIENT_SECRET` environment variables. If both are set, they take precedence over the properties file.
 
 ## Examples
+
+From the repository root, first confirm Maven can compile the examples:
+
+```bash
+mvn clean compile
+```
+
+This verifies the Java dependency setup but does not test headset access. Start EMOTIV Launcher, sign in, connect your headset or Virtual Brainwear, and approve the application before running an example.
+
 
 Device-status stream (recommended first test):
 
