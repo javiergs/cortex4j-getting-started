@@ -54,7 +54,7 @@ Device-status stream (recommended first test):
 mvn compile exec:java -Dexec.mainClass=com.javiergs.examples.DeviceExample
 ```
 
-Performance metrics (requires stream entitlement):
+Performance metrics (requires stream entitlement; prints named values for documented 13-channel EPOC/Insight or 4-channel MN8 layouts):
 
 ```bash
 mvn compile exec:java -Dexec.mainClass=com.javiergs.examples.MetricsExample
@@ -69,6 +69,9 @@ mvn compile exec:java -Dexec.mainClass=com.javiergs.examples.BandPowerExample
 ```
 
 These examples print raw ordered channel values. Sensor names and band-power channels are headset/stream-dependent; do not assume array indexes represent specific electrodes or frequency bands. The EEG stream may require additional licensing. All three require EMOTIV Launcher and a connected headset or Virtual Brainwear.
+
+
+The metrics example uses the documented channel ordering for known layouts; Cortex4J 0.1.0 does not expose the `subscribe` response's `cols` metadata yet. For unknown layouts, the example prints raw values instead of guessing labels. Verify the reported labels against your headset and Cortex version. See [EMOTIV's sample format documentation](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object).
 
 Each program connects, registers an Observer listener, subscribes, prints samples for 30 seconds, and closes the session.
 
