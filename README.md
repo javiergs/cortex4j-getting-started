@@ -28,7 +28,7 @@ Then return to this repository's root directory.
 
 For these Getting Started examples, store your Cortex application credentials in a local properties file.
 
-1. Copy `src/main/resources/cortex4j.properties.example` to `src/main/resources/cortex4j.properties`.
+1. Copy `src/main/resources/cortex4j.properties` to `src/main/resources/cortex4j.properties`.
 2. Edit `cortex4j.properties` with the Client ID and Client Secret from your registered EMOTIV application:
 
 ```properties
