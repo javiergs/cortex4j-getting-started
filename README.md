@@ -14,15 +14,7 @@ Independent Java 21/Maven examples for [Cortex4J](https://github.com/jgs-lab/api
 
 ## Install Cortex4J
 
-Cortex4J 0.1.0 is not assumed to be published to Maven Central. Install it locally first:
-
-```bash
-git clone https://github.com/jgs-lab/api-cortex4j.git
-cd api-cortex4j
-mvn clean install
-```
-
-Then return to this repository's root directory.
+Cortex4J 0.1.0 is available on Maven Central. The `pom.xml` already declares `com.javiergs:cortex4j:0.1.0`, so Maven downloads the library automatically when you build or run an example. You do not need to clone or install the library separately.
 
 ## Credentials
 
@@ -30,7 +22,7 @@ Your **Client ID and Client Secret identify your registered Cortex application**
 
 For these Getting Started examples, store your Cortex application credentials in a local properties file.
 
-1. Copy `src/main/resources/cortex4j.properties` to `src/main/resources/cortex4j.properties`.
+1. Copy `src/main/resources/cortex4j.properties.example` to `src/main/resources/cortex4j.properties`.
 2. Edit `cortex4j.properties` with the Client ID and Client Secret from your registered EMOTIV application:
 
 ```properties
