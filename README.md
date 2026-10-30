@@ -2,8 +2,6 @@
 
 Independent Java 21/Maven examples for [Cortex4J](https://github.com/jgs-lab/api-cortex4j). This repository contains examples, not the library implementation.
 
-<img width="1536" height="1024" alt="A0F040FB-3FCC-4300-B330-99A379DBCE86" src="https://github.com/user-attachments/assets/71244245-469d-479d-ba10-c69f02660ba7" />
-
 
 ## Setup
 
