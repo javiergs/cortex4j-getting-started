@@ -1,6 +1,6 @@
 package com.javiergs.examples;
 
-import com.javiergs.cortex4j.CortexSession;
+import com.javiergs.cortex4j.CortexClient;
 
 /**
  * Receive headset device/status samples.
@@ -12,7 +12,7 @@ import com.javiergs.cortex4j.CortexSession;
 public final class DeviceExample {
 
   public static void main(String[] args) throws InterruptedException {
-    try (CortexSession session = CortexSession.connect()) {
+    try (CortexClient session = CortexClient.connect()) {
       System.out.println("Connected headset: " + session.getHeadsetId());
       session.addListener("dev", sample ->
           System.out.println("Device @ " + sample.getTimestamp() + ": " + sample.getValues()));
