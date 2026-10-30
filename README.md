@@ -3,12 +3,11 @@
 [Contributing](CONTRIBUTING.md) · [Code of Conduct](CODE_OF_CONDUCT.md) · [Accessibility](ACCESSIBILITY.md)
 
 ![Java 21+](https://img.shields.io/badge/Java-21%2B-blue)
-![Examples 8.0.0](https://img.shields.io/badge/version-0.2.0-green)
-[![Java CI](https://github.com/jgs-lab/api-cortex4j/actions/workflows/build.yml/badge.svg)](https://github.com/jgs-lab/api-cortex4j/actions/workflows/build.yml)
+![Version 0.2.0](https://img.shields.io/badge/version-0.2.0-green)
 
 Learn to read EMOTIV headset data using **Cortex4J 0.2.0**, Java 21, and Maven. Start with the device-status example, then explore performance metrics, EEG, motion, and band power.
 
-<img width="1536" height="1024" alt="a" src="https://github.com/user-attachments/assets/f3881025-747b-4e13-8cfa-cd653f633b7b" />
+<img width="1536" height="1024" alt="Cortex4J overview illustration" src="https://github.com/user-attachments/assets/f3881025-747b-4e13-8cfa-cd653f633b7b" />
 
 ## Quick start
 
@@ -115,4 +114,6 @@ Each program connects using `CortexClient`, registers a `CortexListener`, subscr
 - No headset: connect hardware or enable Virtual Brainwear.
 - Access denied: check Client ID/Secret, Launcher sign-in, and application approval.
 - Stream rejected: check permissions, headset compatibility, and subscription entitlement.
-- Connection failed: confirm Launcher is running.\n- Java compilation error: check that `mvn -version` reports Java 21, not Java 17.\n- Dependency resolution error: confirm internet access and that Maven can download `com.javiergs:cortex4j:0.2.0` from Maven Central.
+- Connection failed: confirm Launcher is running.
+- Java compilation error: check that `mvn -version` reports Java 21, not Java 17.
+- Dependency resolution error: confirm internet access and that Maven can download `com.javiergs:cortex4j:0.2.0` from Maven Central.
