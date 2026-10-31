@@ -7,3 +7,9 @@ target/
 .vscode/
 src/main/resources/cortex4j.properties
 .env
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Local logs
+*.log
