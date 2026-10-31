@@ -3,6 +3,7 @@
 
 ![Java 21+](https://img.shields.io/badge/Java-21%2B-blue)
 ![Version 0.2.0](https://img.shields.io/badge/version-0.2.0-green)
+[![Java CI](https://github.com/javiergs/cortex4j-getting-started/actions/workflows/java-ci.yml/badge.svg)](https://github.com/javiergs/cortex4j-getting-started/actions/workflows/java-ci.yml)
 
 Learn to read EMOTIV headset data using **Cortex4J 0.2.0**, Java 21, and Maven. Start with the device-status example, then explore performance metrics, EEG, motion, and band power.
 
