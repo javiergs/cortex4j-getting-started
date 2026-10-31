@@ -1,41 +1,31 @@
-# Getting Started with CORTEX4J
+# Getting Started with Cortex4J
 
 ![Java 21+](https://img.shields.io/badge/Java-21%2B-blue)
 ![Version 0.2.0](https://img.shields.io/badge/version-0.2.0-green)
 [![Java CI](https://github.com/javiergs/cortex4j-getting-started/actions/workflows/java-ci.yml/badge.svg)](https://github.com/javiergs/cortex4j-getting-started/actions/workflows/java-ci.yml)
 
-Learn to read EMOTIV headset data using **Cortex4J 0.2.0**, Java 21, and Maven. Start with the device-status example, then explore performance metrics, EEG, motion, and band power.
+**Cortex4J** is a Java library for accessing EMOTIV headset data. Use this repository to explore device status, performance metrics, EEG, motion, and band-power streams with Java 21 and Maven.
 
 <img width="1536" height="1024" alt="Cortex4J overview illustration" src="https://github.com/user-attachments/assets/f3881025-747b-4e13-8cfa-cd653f633b7b" />
 
+## Requirements
+
+- **Java 21+** and Maven 3.9+
+- EMOTIV Launcher, a supported headset or available Virtual Brainwear
+- Registered Cortex application credentials; stream access depends on your account and license
+
 ## Quick start
 
-For a guided first experiment, see the [Student Quick Start](docs/student-quick-start.md). For commands, prerequisites, and expected output for every program, see [Runnable Examples](docs/examples.md).
-
-1. Install **JDK 21** and **Maven 3.9+**. Check with `java -version` and `mvn -version`; both should use Java 21.
-2. Follow [Setup](#setup) to configure EMOTIV Launcher, a headset or Virtual Brainwear, and your Cortex application credentials.
-3. In this repository's root folder, run:
+For the complete setup and credential instructions, follow the [Student Quick Start](docs/student-quick-start.md). Start EMOTIV Launcher, connect a headset or Virtual Brainwear, and approve application access. From the repository root:
 
 ```bash
-mvn clean compile
+mvn clean verify
 mvn exec:java -Dexec.mainClass=com.javiergs.examples.DeviceExample
 ```
 
-The device example listens for headset status for 30 seconds and closes the connection automatically. If it cannot connect, see [Troubleshooting](#troubleshooting).
+The example listens for device/status samples for about 30 seconds. A successful Maven build alone does not verify headset connectivity.
 
-## API documentation
-
-[Cortex4J API reference](https://javiergs.github.io/cortex4j-getting-started/javadoc/) — documentation for `CortexClient`, `CortexListener`, `CortexSample`, and other public types.
-
-## Setup
-
-1. Install JDK 21 and Maven 3.9+; clone or download this repository and open a terminal in its root directory.
-2. Create an [EMOTIV account](https://www.emotiv.com/) and install/sign in to EMOTIV Launcher.
-3. [Register a Cortex application](https://www.emotiv.com/knowledge-base/how-to-register-your-app-id-with-cortex-sdk-for-development) to obtain your Client ID and Client Secret.
-4. Connect a headset or configure [Virtual Brainwear](https://emotiv.gitbook.io/emotiv-launcher/devices-setting-up-virtual-brainwear-r/creating-a-virtual-brainwear-device).
-5. Approve application access in Launcher. Available streams depend on your headset, permissions, and EMOTIV licensing; a free account does not guarantee access to EEG or metrics.
-
-## Install Cortex4J
+## Install with Maven
 
 Cortex4J 0.2.0 is available on Maven Central. Add the following dependency to the `<dependencies>` section of your Maven project's `pom.xml`:
 
@@ -49,63 +39,23 @@ Cortex4J 0.2.0 is available on Maven Central. Add the following dependency to th
 
 This Getting Started repository already includes the dependency in its `pom.xml`. Maven downloads Cortex4J automatically when you build or run an example; you do not need to clone or install the library separately.
 
-## Credentials
-
-**Do not commit your client secret.** Register your own Cortex application, subject to EMOTIV's account and licensing requirements.
-
-Your **Client ID and Client Secret identify your registered Cortex application**. They are **not** your EMOTIV account email address and password. Obtain them by following the application registration instructions in Setup step 3.
-
-For these Getting Started examples, store your Cortex application credentials in a local properties file.
-
-1. Copy `src/main/resources/cortex4j.properties.example` to `src/main/resources/cortex4j.properties` (the example template is included in this repository).
-2. Edit `cortex4j.properties` with the Client ID and Client Secret from your registered EMOTIV application:
-
-```properties
-cortex.client.id=YOUR_CLIENT_ID
-cortex.client.secret=YOUR_CLIENT_SECRET
-```
-
-3. Save the file and run an example. `CortexClient.connect()` automatically reads these credentials; no changes to the Java examples are necessary.
-
-The real `cortex4j.properties` is excluded by `.gitignore` and excluded from JAR packaging by Maven. Maven can still copy it into local `target/classes` for running examples, so **never commit credentials or share build output containing them**.
-
-**Optional:** Instead of a properties file, you can set `CORTEX_CLIENT_ID` and `CORTEX_CLIENT_SECRET` environment variables. If both are set, they take precedence over the properties file.
-
 ## Examples
 
-From the repository root, first confirm Maven can compile the examples:
+- **Device status** — confirm connection and listen for headset events (`DeviceExample`).
+- **Performance metrics** — inspect available cognitive metrics (`MetricsExample`).
+- **EEG, motion, and band power** — subscribe to `eeg`, `mot`, and `pow` streams when your device and account support them.
 
-```bash
-mvn clean compile
-```
+See [Runnable Examples](docs/examples.md) for commands, output, and limitations. Sample channel layouts vary by headset and stream; do not assume fixed electrode positions.
 
-This verifies the Java dependency setup but does not test headset access. Start EMOTIV Launcher, sign in, connect your headset or Virtual Brainwear, and approve the application before running an example.
+## API documentation
 
-Device-status stream (recommended first test):
+[Cortex4J API reference](https://javiergs.github.io/cortex4j-getting-started/javadoc/) — public types including `CortexClient`, `CortexListener`, and `CortexSample`.
 
-```bash
-mvn compile exec:java -Dexec.mainClass=com.javiergs.examples.DeviceExample
-```
+## Credentials and privacy
 
-Performance metrics (requires stream entitlement; prints named values for documented 13-channel EPOC/Insight or 4-channel MN8 layouts):
+Use your **Cortex application Client ID and Client Secret**, not your EMOTIV account password. For local development, copy `src/main/resources/cortex4j.properties.example` to the ignored `cortex4j.properties` file and enter your credentials, or set both `CORTEX_CLIENT_ID` and `CORTEX_CLIENT_SECRET` environment variables (preferred for independent projects).
 
-```bash
-mvn compile exec:java -Dexec.mainClass=com.javiergs.examples.MetricsExample
-```
-
-Additional stream examples (availability depends on headset and EMOTIV license):
-
-```bash
-mvn compile exec:java -Dexec.mainClass=com.javiergs.examples.EegExample
-mvn compile exec:java -Dexec.mainClass=com.javiergs.examples.MotionExample
-mvn compile exec:java -Dexec.mainClass=com.javiergs.examples.BandPowerExample
-```
-
-These examples print raw ordered channel values. Sensor names and band-power channels are headset/stream-dependent; do not assume array indexes represent specific electrodes or frequency bands. The EEG stream may require additional licensing. All three require EMOTIV Launcher and a connected headset or Virtual Brainwear.
-
-The metrics example uses the documented channel ordering for known layouts; Cortex4J does not expose the `subscribe` response's `cols` metadata yet. For unknown layouts, the example prints raw values instead of guessing labels. Verify the reported labels against your headset and Cortex version. See [EMOTIV's sample format documentation](https://emotiv.gitbook.io/cortex-api/data-subscription/data-sample-object).
-
-Each program connects using `CortexClient`, registers a `CortexListener`, subscribes to a stream, prints samples for 30 seconds, and closes automatically. The example code is in `src/main/java/com/javiergs/examples/`.
+Never commit or share credentials, participant recordings, or generated build directories. Maven excludes `cortex4j.properties` from packaged JARs, but may copy it to local `target/classes`. See the [Student Quick Start](docs/student-quick-start.md) for the full setup.
 
 ## Build checks
 
