@@ -28,7 +28,7 @@ See the [EMOTIV application registration instructions](https://www.emotiv.com/kn
 
 For a local experiment, copy `src/main/resources/cortex4j.properties.example` to `src/main/resources/cortex4j.properties` and replace the placeholders with your application credentials.
 
-The real properties file is ignored by Git **and excluded from Maven build resources**. Do not commit or share it.
+The real properties file is ignored by Git and **excluded from packaged JARs**. Maven may still copy it into local `target/classes` for running examples; never share your build output. Do not commit or share it.
 
 Alternatively, set both `CORTEX_CLIENT_ID` and `CORTEX_CLIENT_SECRET` environment variables. These take precedence over the properties file. Prefer environment variables for independent applications and CI. Never print secrets or paste them into issues.
 
