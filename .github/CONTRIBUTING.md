@@ -1,6 +1,6 @@
 # Contributing to Cortex4J Getting Started
 
-Thank you for improving the public CORTEX4J learning materials. This repository contains examples and documentation for the published Cortex4J library; the library implementation is maintained separately in a private repository.
+Thank you for improving the public CORTEX4J learning materials. This repository contains examples and documentation for the published Cortex4J library; the library is distributed separately through Maven Central.
 
 ## Welcome contributions
 
