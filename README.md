@@ -6,7 +6,7 @@
 
 **Cortex4J** is a Java library for accessing EMOTIV headset data. Use this repository to explore device status, performance metrics, EEG, motion, and band-power streams with Java 21 and Maven.
 
-<img width="1536" height="1024" alt="Cortex4J overview illustration" src="https://github.com/user-attachments/assets/f3881025-747b-4e13-8cfa-cd653f633b7b" />
+![Cortex4J overview illustration](assets/cortex4j-architecture.png)
 
 ## Requirements
 
