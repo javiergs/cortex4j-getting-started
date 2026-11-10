@@ -69,3 +69,9 @@ The public **Java CI** workflow runs `mvn clean verify` with Java 21. The separa
 - Connection failed: confirm Launcher is running.
 - Java compilation error: check that `mvn -version` reports Java 21, not Java 17.
 - Dependency resolution error: confirm internet access and that Maven can download `com.javiergs:cortex4j:0.2.0` from Maven Central.
+
+## Feedback
+
+[Open an issue](https://github.com/javiergs/cortex4j-getting-started/issues/new/choose) to report an example bug, suggest a feature, or flag unclear documentation.
+
+For bugs, include the example or guide section, the command you ran, and what you expected and observed. Include your operating system and Java and Maven versions when relevant. For connection problems, include the example and the Cortex client or device setup, if relevant. Remove credentials and personal data from any logs.
