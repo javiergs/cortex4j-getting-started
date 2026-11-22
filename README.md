@@ -1,8 +1,9 @@
 # Getting Started with Cortex4J
 
-![Java 21+](https://img.shields.io/badge/Java-21%2B-blue)
-![Version 0.2.0](https://img.shields.io/badge/version-0.2.0-green)
-[![Java CI](https://github.com/javiergs/cortex4j-getting-started/actions/workflows/java-ci.yml/badge.svg)](https://github.com/javiergs/cortex4j-getting-started/actions/workflows/java-ci.yml)
+[![Java 21+](https://img.shields.io/badge/Java-21%2B-blue)](https://adoptium.net/temurin/releases/?version=21)
+[![API version 0.2.0](https://img.shields.io/badge/API-0.2.0-green)](https://central.sonatype.com/artifact/com.javiergs/cortex4j/0.2.0)
+[![Java CI](https://github.com/javiergs/cortex4j-getting-started/actions/workflows/java-ci.yml/badge.svg?branch=main)](https://github.com/javiergs/cortex4j-getting-started/actions/workflows/java-ci.yml)
+[![Javadoc](https://img.shields.io/badge/docs-Javadoc-blue)](https://javiergs.github.io/cortex4j-getting-started/javadoc/)
 
 **Cortex4J** is a Java library for accessing EMOTIV headset data. Use this repository to explore device status, performance metrics, EEG, motion, and band-power streams with Java 21 and Maven.
 
@@ -59,7 +60,7 @@ Never commit or share credentials, participant recordings, or generated build di
 
 ## Build checks
 
-The public **Java CI** workflow runs `mvn clean verify` with Java 21. The separate **Verify Maven Central dependency** workflow compiles with an isolated empty Maven cache to check that the published Cortex4J dependency resolves independently. Neither workflow requires EMOTIV credentials or tests headset connectivity.
+The public **Java CI** workflow runs `mvn clean verify` with Java 21. The separate **Verify Maven Central dependency** workflow runs on demand and when the POM or validation workflow changes. It compiles with an isolated empty Maven cache to check that the published Cortex4J dependency resolves independently. Neither workflow requires EMOTIV credentials or tests headset connectivity.
 
 ## Troubleshooting
 
