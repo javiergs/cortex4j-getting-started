@@ -2,8 +2,14 @@ name: Verify Maven Central dependency
 
 on:
   pull_request:
+    paths:
+      - 'pom.xml'
+      - '.github/workflows/verify-central.yml'
   push:
     branches: [main]
+    paths:
+      - 'pom.xml'
+      - '.github/workflows/verify-central.yml'
   workflow_dispatch:
 
 permissions:
